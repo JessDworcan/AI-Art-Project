@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, {Component } from 'react';
 import styled from 'styled-components';
 
 const Title = styled.div`
@@ -25,8 +25,9 @@ const Button = styled.button`
   }
 `;
 
-function App() {
-  return (
+class App extends Component {
+  render  () {
+    return (
     <div>
       <Title>
         Welcome to the fancy AI prompt app thing
@@ -35,7 +36,8 @@ function App() {
         Render Image
       </Button>
     </div>
-  );
+    );
+  }
 }
 
 export default App;
