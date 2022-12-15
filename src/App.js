@@ -1,6 +1,7 @@
 import './App.css';
 import React, {Component } from 'react';
 import styled from 'styled-components';
+import PromptBox from './components/promptBox';
 
 const Title = styled.div`
   color: green;
@@ -35,6 +36,7 @@ class App extends Component {
       <Button>
         Render Image
       </Button>
+      <PromptBox/>
     </div>
     );
   }
