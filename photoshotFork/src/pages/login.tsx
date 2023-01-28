@@ -3,9 +3,24 @@ import { Box, Flex, Heading, Icon, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import React from "react";
 import { MdCheckCircleOutline } from "react-icons/md";
+import GoogleLogin from 'react-google-login';
+import { GoogleLoginResponse } from 'react-google-login';
+import { GoogleLoginResponseOffline } from 'react-google-login';
 
 const Login = () => {
   const router = useRouter();
+
+  const handleGoogleSignInSuccess = (response: GoogleLoginResponse | GoogleLoginResponseOffline) => {
+    console.log(response);
+    // Use the response to make API calls or to authenticate the user
+}
+
+const handleGoogleSignInFailure = (response: GoogleLoginResponse | GoogleLoginResponseOffline) => {
+    console.log(response);
+    // Handle the error
+}
+
+
 
   return (
     <Flex flex="1" align="center" justify="center">
@@ -21,6 +36,12 @@ const Login = () => {
       ) : (
         <AuthForm />
       )}
+      <GoogleLogin
+        clientId="YOUR_CLIENT_ID"
+        onSuccess={handleGoogleSignInSuccess}
+        onFailure={handleGoogleSignInFailure}
+        cookiePolicy={'single_host_origin'}
+      />
     </Flex>
   );
 };
