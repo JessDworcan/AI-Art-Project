@@ -36,12 +36,6 @@ const handleGoogleSignInFailure = (response: GoogleLoginResponse | GoogleLoginRe
       ) : (
         <AuthForm />
       )}
-      <GoogleLogin
-        clientId="YOUR_CLIENT_ID"
-        onSuccess={handleGoogleSignInSuccess}
-        onFailure={handleGoogleSignInFailure}
-        cookiePolicy={'single_host_origin'}
-      />
     </Flex>
   );
 };
