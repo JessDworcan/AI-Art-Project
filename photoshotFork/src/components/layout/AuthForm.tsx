@@ -85,20 +85,12 @@ export default function AuthForm() {
             </Button>
           </Stack>
         </Stack>
-        <Stack spacing={4}>
+        <Stack spacing={4} mt={4}>
           <GoogleLogin
             clientId="1064621197622-maqp8na8oji5nackreu8tksali0jq1up.apps.googleusercontent.com"
             onSuccess={handleGoogleSuccess}
             onFailure={(response: any) => {console.log(response)}}
             cookiePolicy={'single_host_origin'}
-            render={renderProps => (
-              <Button 
-              mt={4}
-              onClick={renderProps.onClick} variant="brand"
-              >
-                Sign in with Google
-              </Button>
-            )}
           />
         </Stack>
       </Box>
